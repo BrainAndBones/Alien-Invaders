@@ -1,0 +1,270 @@
+
+body{
+	background-color: rgba(0, 0, 123);
+	position: fixed;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	margin: 0;
+}
+#canvas{
+	height: 100vh;
+	width: 100vw;
+	margin: 0; 
+	z-index: -1; 
+}
+#right{
+	position: absolute;
+	background-color: transparent;
+	height: 50vh;
+	width: 50vw;
+	bottom: -25vh;
+	right: 0;
+	z-index: 10;
+}
+#left{
+	position: absolute;
+	background-color: transparent;
+	height: 50vh;
+	width: 50vw;
+	bottom: -25vh;
+	left: 0;
+	z-index: 10;
+}
+#shoot{
+	position: absolute;
+	background-color: transparent;
+	height: 75vh;
+	width: 100vw;
+	top: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+}
+#scorebox{
+	height: 4vh;
+	width: 20vw;
+	position: absolute;
+	font-weight: bold;
+	font-family: "Courier New", Courier, monospace;
+	top: 1vh;
+	right: 0;
+	background-color: transparent;
+	font-size: 3.5vh;
+	color: white;
+}	
+#intro{
+	position: absolute;
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+	z-index: 11;
+	height: 100vh;
+	width: 80vw;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	background-color: transparent;
+	font-size: 3.5vh;
+	color: white;
+	font-weight: bold;
+	border-color: transparent
+}
+.buttons{
+	z-index: 25;
+	position: absolute;
+	font-family: "Courier New", Courier, monospace;
+	height: 20vh;
+	width: 50vw;
+	font-weight: bold;
+	font-size: 1em;
+   	left: 0;
+	right: 0;
+	margin: auto;
+   	text-align: center;
+   	top: 35vh;
+   	background-color: transparent;
+   	color: white;
+   	border-color: transparent;
+}
+#button2{
+	top: 50vh;
+}
+#button3{
+	top: 65vh;
+}
+#button4{
+	z-index: 15;
+	position: absolute;
+	font-family: "Courier New", Courier, monospace;
+	height: 20vh;
+	width: 100vw;
+	font-weight: bold;
+	font-size: 1em;
+   	left: 0;
+   	text-align: center;
+   	bottom: -50vh;
+   	background-color: transparent;
+   	color: white;
+   	border-color: transparent;
+   	display: none;
+}
+#blocker{
+	z-index: 12;
+	position: fixed;
+   	height: 100vh;
+   	width: 100vw;
+  	background-color: transparent;
+   	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+#shoot2{
+	display: none;
+	z-index: 10;
+	font-family: "Courier New", Courier, monospace;
+	position: absolute;
+	text-align: center;
+	vertical-align: middle;
+	background-color: rgba(256, 240, 240, .2);
+	font-weight: bold;
+	font-size: 1em;
+	width: 14vw;
+	height: 14vw;
+	right: 3.5vw;
+	bottom: 4vh;
+	border-radius: 100%;
+}
+.examplepics{
+	position: fixed;
+	bottom: 20vh;
+	max-height: 50vh;
+	width: 45vw;
+	z-index: 14;
+}
+#pic1{
+	display: none;
+	left: 0;
+	border-color: transparent;
+	border-width: 5px;
+}
+#pic2{
+	display: none;
+	right: 0;
+	border-color: red;
+	border-width: 5px;
+}
+#pause{
+	transform:rotate(90deg);
+	z-index: 15;
+	position: absolute;
+	font-family: "Courier New", Courier, monospace;
+	height: 20vh;
+	width: 10vw;
+	font-weight: bold;
+	font-size: 2em;
+   	left: -5vw;
+   	top: -5vh;
+   	text-align: center;
+   	background-color: transparent;
+   	color: white;
+   	border-color: transparent;
+   	display: none;
+}
+.centered {
+	left: 0;
+	margin: auto;
+	right: 0;
+	text-align: center
+}
+#paused{
+	left: 0;
+	border-color: transparent;
+	border-width: 5px;
+}
+
+#modal {
+	background-color: rgba(0, 0, 0, .5);
+	border: solid 2vh transparent;
+	border-radius: 2vh;
+	bottom: 0;
+	display: block;
+	height: 0%;
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	width: 0%;
+	transition: .2s
+}
+
+#modalText{
+	bottom: 0;
+	display: inherit;
+	height: fit-content;
+	margin: inherit;
+	position: absolute;
+	top: 0;
+	visibility: inherit;
+	width: 100%;
+	color: white;
+}
+#unpause{
+	top: 0vh;
+	z-index: 25;
+}
+#main{
+	top: 15vh;
+	z-index: 25;
+}
+#pausedText{
+	position: absolute;
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+	z-index: 11;
+	height: 100vh;
+	width: 80vw;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	background-color: transparent;
+	font-size: 3.5vh;
+	color: white;
+	font-weight: bolder;
+	border-color: transparent
+}
+#blocker2{
+	z-index: 12;
+	position: fixed;
+   	height: 100vh;
+   	width: 100vw;
+  	background-color: transparent;
+   	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+#enterName{
+	position: absolute;
+	z-index: 15;
+	top: 60vh;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 5vh;
+	width: 50vw;
+	background-color: rgba(256, 256, 256, .5);
+	text-align: center;
+	font-weight: bold;
+	font-family: "Courier New", Courier, monospace;
+	color: white;
+	font-size: 100%;
+	display: none;
+}
