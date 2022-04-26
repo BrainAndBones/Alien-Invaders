@@ -1,6 +1,6 @@
-var c, x, y, ys = -10, xs = -10, addY, addX, leftA = 0, rightA, width, height,alienTotal = 60, ya = [], xalien = [], alienShotC = 0, alienShotX = [], alienShotY = [], alienCount =[20,20,10,10];
+var c, x, y, ys = -20, xs = -20, addY, addX, leftA = 0, rightA, width, height,alienTotal = 60, ya = [], xalien = [], alienShotC = 0, alienShotX = [], alienShotY = [], alienCount =[20,20,10,10];
 	var alienLevel = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3];
-	var loopN = 0, moveX = 0, phaseA = 0, speed = 0, Alienspeed = .4, speedAdd = .2, shot = "false", shotx = [], shoty = [], time = 0, score = 0, topScores = [0,0,0,0,0], names = ["unused","unused","unused","unused","unused"], scoreNum;
+	var loopN = 0, moveX = 0, phaseA = 0, speed = 0, Alienspeed = .8, speedAdd = .4, shot = "false", shotx = [], shoty = [], time = 0, score = 0, topScores = [0,0,0,0,0], names = ["unused","unused","unused","unused","unused"], scoreNum;
 	setScores(); 
 	var lives = 3, j1centerX, j1centerY, j2centerX, j2centerY, j1radius = 100, j2radius = 50, controls = "joy", exCount, exX = [], exY = [], exAddX = [], exAddY = [], exR = [], exColor = [], exColor1 = [], exAngle, exA = [], exGravity = .0002, explode = false, audio;
 	
@@ -45,23 +45,23 @@ function play(){
 	barrierC = 177;
 	alienLevel = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3];
 	barrierN = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10];
-	barrierX = [10,10,15,20,25,30,35,5,10,15,20,25,30,35,40,0,5,10,15,20,25,30,35,40,45,0,5,10,15,30,35,40,45,0,5,10,35,40,45,0,5,10,35,40,45,10,15,20,25,30,35,5,10,15,20,25,30,35,40,0,5,10,15,20,25,30,35,40,45,0,5,10,15,30,35,40,45,0,5,10,35,40,45,0,5,10,35,40,45,10,15,20,25,30,35,5,10,15,20,25,30,35,40,0,5,10,15,20,25,30,35,40,45,0,5,10,15,30,35,40,45,0,5,10,35,40,45,0,5,10,35,40,45,10,15,20,25,30,35,5,10,15,20,25,30,35,40,0,5,10,15,20,25,30,35,40,45,0,5,10,15,30,35,40,45,0,5,10,35,40,45,0,5,10,35,40,45];
-	barrierY = [0,0,0,0,0,0,0,5,5,5,5,5,5,5,5,10,10,10,10,10,10,10,10,10,10,15,15,15,15,15,15,15,15,20,20,20,20,20,20,25,25,25,25,25,25,0,0,0,0,0,0,5,5,5,5,5,5,5,5,10,10,10,10,10,10,10,10,10,10,15,15,15,15,15,15,15,15,20,20,20,20,20,20,25,25,25,25,25,25,0,0,0,0,0,0,5,5,5,5,5,5,5,5,10,10,10,10,10,10,10,10,10,10,15,15,15,15,15,15,15,15,20,20,20,20,20,20,25,25,25,25,25,25,0,0,0,0,0,0,5,5,5,5,5,5,5,5,10,10,10,10,10,10,10,10,10,10,15,15,15,15,15,15,15,15,20,20,20,20,20,20,25,25,25,25,25,25];
+	barrierX = [20,20,30,40,50,60,70,10,20,30,40,50,60,70,80,0,10,20,30,60,50,60,70,80,90,0,20,20,30,60,70,80,90,0,10,20,70,80,90,0,10,20,70,80,90,20,30,40,50,60,70,10,20,30,40,50,60,70,80,0,10,20,30,40,50,60,70,80,90,0,10,20,30,60,70,80,90,0,10,20,70,80,90,0,10,20,70,80,90,20,30,40,50,60,70,10,20,30,40,50,60,70,80,0,10,20,30,40,50,60,70,80,90,0,10,20,30,60,70,80,90,0,10,20,70,80,90,0,10,20,70,80,90,20,30,40,50,60,70,10,20,30,40,50,60,70,80,0,10,20,30,40,50,60,70,80,90,0,10,20,30,60,70,80,90,0,10,20,70,80,90,0,10,20,70,80,90];
+	barrierY = [0,0,0,0,0,0,0,10,10,10,10,10,10,10,10,20,20,20,20,20,20,20,20,20,20,30,30,30,30,30,30,30,30,40,40,40,40,40,40,50,50,50,50,50,50,0,0,0,0,0,0,0,10,10,10,10,10,10,10,10,20,20,20,20,20,20,20,20,20,20,30,30,30,30,30,30,30,30,40,40,40,40,40,40,50,50,50,50,50,50,0,0,0,0,0,0,0,10,10,10,10,10,10,10,10,20,20,20,20,20,20,20,20,20,20,30,30,30,30,30,30,30,30,40,40,40,40,40,40,50,50,50,50,50,50,0,0,0,0,0,0,0,10,10,10,10,10,10,10,10,20,20,20,20,20,20,20,20,20,20,30,30,30,30,30,30,30,30,40,40,40,40,40,40,50,50,50,50,50,50];
 	shotx = [];
 	shoty = [];
 	Alienspeed = .8;
-	speedAdd = .5;
+	speedAdd = .4;
 	moveX = 0;
 	alienTotal = 60;
 	x = width / 2 - 32;
-	y = height - 100; 
+	y = height - 200; 
 	addX = width/12;
 	leftA = 0;
 	rightA = addX * 2;
 	j1centerX = width / 6;
-	j1centerY = height - 50;
+	j1centerY = height - 100;
 	j2centerX = width / 6;
-	j2centerY = height - 50;
+	j2centerY = height - 100;
 	explode = false;
 	var i = 0;
 	for(n=0;n<60;n++){
@@ -119,7 +119,7 @@ function drawTank(){
 	c.fillStyle = "white";
 	c.fillRect(x+20, y-20, 24, 30);
 	c.beginPath();
-	c.arc(x+68,y+22,22,0,2*Math.PI)
+	c.arc(x+64,y+22,22,0,2*Math.PI)
 	c.fillStyle="white";
 	c.fill();
 	c.beginPath();
@@ -143,7 +143,6 @@ function drawAliens(){
 	xa = xalien[Num] + moveX;
 	if(time%2==0){
 		c.drawImage(alien2, 0, 0, alien2.width, alien2.height, xa, ya[Num], 60, 64);
-	}
 	else{
 		c.drawImage(alien5, 0, 0, alien5.width, alien5.height, xa, ya[Num], 60, 64);
 	}
@@ -179,14 +178,14 @@ function drawAliens(){
 		if(xalien[n] + moveX > width - 40&&phaseA==0){
 			phaseA = 1;
 			for(n=0; n<alienTotal; n++){
-				ya[n] +=10;
+				ya[n] +=20;
 			}
 			break;
 		}
 		if(xalien[n] + moveX < 10&&phaseA==1){
 			phaseA = 0;
 		   for(n=0; n<alienTotal; n++){
-				ya[n] +=10;
+				ya[n] +=20;
 			}
 			break;
 		}
@@ -197,14 +196,14 @@ function ifstatements(){
 	uWin();
 	}
 	for(n=1;n<=60;n++){
-		if(ya[n-1] >= y - 30){
+		if(ya[n-1] >= y - 60){
 			uLose();	
 		break
 		}
 	}
 	for(int = 0; int < alienShotC; int++){
-			if(alienShotY[int] <= y + 10 && alienShotY[int] >= y - 10){
-				if(alienShotX[int]+1.5<= x + 40 && alienShotX[int]+1.5 >= x - 10){
+			if(alienShotY[int] <= y + 20 && alienShotY[int] >= y - 20){
+				if(alienShotX[int]+3<= x + 80 && alienShotX[int]+3 >= x - 20){
 					if(lives > 1){
 						lives--;
 						setExplosion(300);
@@ -230,8 +229,8 @@ function ifstatements(){
 	nm=1;
 	for(Num = 0; Num < barrierC; Num++){
 		for(num = 0; num < alienShotC; num++){
-			if(alienShotY[num]<= barrierY[Num]+y -60 && alienShotY[num] >= barrierY[Num]+y-65){
-				if(alienShotX[num]+1.5<=barrierX[Num]+addX*barrierN[Num] + 5 && alienShotX[num]+1.5>=barrierX[Num]+addX*barrierN[Num]){
+			if(alienShotY[num]<= barrierY[Num]+y -120 && alienShotY[num] >= barrierY[Num]+y-130){
+				if(alienShotX[num]+3<=barrierX[Num]+addX*barrierN[Num] + 10 && alienShotX[num]+3>=barrierX[Num]+addX*barrierN[Num]){
 					alienShotX.splice(num,1);
 					alienShotY.splice(num,1);
 					alienShotC--;
@@ -247,7 +246,7 @@ function ifstatements(){
 	//barrier being destroyed by aliens
 	for(Num = 0; Num < barrierC; Num++){
 		for(num = 0; num < 60; num++){
-			if(ya[num]+18 <= barrierY[Num]+y-65 && ya[num]+28 >= barrierY[Num]+y-65){
+			if(ya[num]+32 <= barrierY[Num]+y-130 && ya[num]+56 >= barrierY[Num]+y-130){
 				if(xalien[num]+moveX<=barrierX[Num]+addX*barrierN[Num] + 5 && xalien[num]+moveX+40>=barrierX[Num]+addX*barrierN[Num]){
 					barrierX.splice(Num,1);
   					barrierY.splice(Num,1);
@@ -261,8 +260,8 @@ function ifstatements(){
 	
 	if(shot == "true"){
 		for(int = 0; int < barrierC; int++){
-			if(ys <= barrierY[int]+y-60 && ys >= barrierY[int]+y-65){
-				if(xs+1.5<=barrierX[int]+addX*barrierN[int] + 5 && xs+1.5>=barrierX[int]+addX*barrierN[int]){
+			if(ys <= barrierY[int]+y-120 && ys >= barrierY[int]+y-130){
+				if(xs+3<=barrierX[int]+addX*barrierN[int] + 10 && xs+3>=barrierX[int]+addX*barrierN[int]){
 					shot = "false";
 					barrierX.splice(int,1);
   					barrierY.splice(int,1);
@@ -293,7 +292,7 @@ function loop(){
 		gotOne();
 		drawBarrier();
 		for(a = 0; a < alienShotC; a++){
-	   		alienShotY[a]+=2; 
+	   		alienShotY[a]+=4; 
 	}
 	if(loopN == 100){
 		alienShoot();
@@ -308,12 +307,12 @@ function loop(){
 	}
 	drawAlienShots();
 	ifstatements();
-	if(x + speed + 50 < width && x + speed > 0){
+	if(x + speed + 100 < width && x + speed > 0){
 		x+=speed;
 	}
 	xa++;
 	if(ys >= 0){
-	   ys-=4; 
+	   ys-=8; 
 	}
 	else{
 		shot="false";
@@ -335,13 +334,13 @@ function loop(){
 };
 }
 function goright(){
-	if(speed<1){
-		speed++;
+	if(speed<2){
+		speed+=2;
 	}
 }
 function goleft(){
-	if(speed>-1){
-		speed--;
+	if(speed>-2){
+		speed-=2;
 	}
 }
 function stoptank(){
@@ -358,19 +357,19 @@ function shootem(){
 function gotOne(){
 	if(shot == "true"){
 		for(int = 0; int < alienTotal; int++){
-			if(ys <= ya[int]+45 && ys >= ya[int]){
-				if(xs+1.5<=xalien[int]+moveX+40&&xs+1.5>=xalien[int]+moveX){
+			if(ys <= ya[int]+90 && ys >= ya[int]){
+				if(xs+3<=xalien[int]+moveX+80&&xs+3>=xalien[int]+moveX){
 					ya.splice(int,1);
 					xalien.splice(int,1);
 					shot = "false";
 					if(alienTotal < 10){
-						Alienspeed+=.02;
+						Alienspeed+=.04;
 					}
 					else if(alienTotal < 20){
-						Alienspeed+=.008;
+						Alienspeed+=.016;
 					}
 					else{
-						Alienspeed+=.002;
+						Alienspeed+=.004;
 					}
 					alienTotal--;
 					alienCount[alienLevel[int]]-=1;
@@ -397,20 +396,20 @@ function gotOne(){
 function drawshots(){
 	if(shot == "true"){
 		c.fillStyle = "white";
-		c.fillRect (xs, ys, 3, 10);
+		c.fillRect (xs, ys, 6, 20);
 		c.beginPath();
 	}
 }
 function alienShoot(){
 	var pick = getRandom();
-	alienShotY[alienShotC] = ya[pick] + 40;
+	alienShotY[alienShotC] = ya[pick] + 80;
 	alienShotX[alienShotC] = xalien[pick] + moveX;
 	alienShotC++;
 }
 function drawAlienShots(){
 	for(N=0;N < alienShotC; N++){
 		c.fillStyle = "white";
-		c.fillRect(alienShotX[N], alienShotY[N], 3, 10);
+		c.fillRect(alienShotX[N], alienShotY[N], 6, 20);
 		c.beginPath();
 	}
 }
@@ -431,7 +430,7 @@ function setExplosion(number){
 			exAddX[a] = Math.cos(exAngle)*getRandom2()/2;
 		exAddY[a] = Math.sin(exAngle)*getRandom2()/2;
 		}
-		exGravity = .0002;
+		exGravity = .0004;
 	}
 }
 function explosion(){
@@ -444,11 +443,11 @@ function explosion(){
 		for(a = 0; a < exCount; a++){
 	   		exX[a]+=exAddX[a];
 			exY[a]+=exAddY[a]+exGravity;
-			exA[a]-=.003;
-			if(exR[a]-.003 > 0){
-				exR[a]-=.003;
+			exA[a]-=.006;
+			if(exR[a]-.006 > 0){
+				exR[a]-=.006;
 			}
-			exGravity+=.00001;
+			exGravity+=.00002;
 		}
 		for(a = 0; a < exY.length; a++){
  			if(exY[a] > innerHeight || exA[a] < .1){
@@ -482,25 +481,25 @@ function explosion(){
 function drawBarrier(){
 	for(N = 0; N < barrierC; N++){
 		c.fillStyle = "red";
-		c.fillRect(barrierX[N] + addX * barrierN[N], barrierY[N] + y - 65, 10, 10);
+		c.fillRect(barrierX[N] + addX * barrierN[N], barrierY[N] + y - 130, 10, 10);
 		c.beginPath(); 
 	}
 }
 function drawLifes(){
-	for(l = 30; l <= lives * 30; l+=30){
-		let xl = width-l;
-		let yl = height-20;
+	for(l = 60; l <= lives * 60; l+=60){
+		let xl = width-2;
+		let yl = height-60;
 		c.fillStyle = "white";
-		c.fillRect (xl, yl, 16, 11);
+		c.fillRect (xl, yl, 32, 22);
 		c.beginPath();
 		c.fillStyle = "white";
-		c.fillRect(xl+5, yl-5, 6, 7.5);
+		c.fillRect(xl+10, yl-10, 12, 15);
 		c.beginPath();
-		c.arc(xl+17,yl+5.5,5.5,0,2*Math.PI)
+		c.arc(xl+34,yl+11,11,0,2*Math.PI)
 		c.fillStyle="white";
 		c.fill();
 		c.beginPath();
-		c.arc(xl-.5,yl+5.5,5.5,0,2*Math.PI)
+		c.arc(xl-1,yl+11,11,0,2*Math.PI)
 		c.fillStyle="white";
 		c.fill();
 	}
@@ -749,10 +748,10 @@ function setMode(){
 		c.fill();
 
 // using the joystick knob position relative to the joystick body to move the player
-		if (j2centerX + 20 < j1centerX && x > 0) {
+		if (j2centerX + 40 < j1centerX && x > 0) {
 			x--;
 		}
-		if (j2centerX - 20 > j1centerX && x < width - 40) {
+		if (j2centerX - 40 > j1centerX && x < width - 80) {
 			x++;
 		}
 	}
@@ -790,10 +789,10 @@ function setMode(){
 		// resetJoy - reset joystick; called when the screen is no longer being held
 		isTouchingJoystick = false;
 		j2centerX = width / 6;
-		j2centerY = height - 50;
+		j2centerY = height - 100;
 	}
 
-	function clamp(number = 5, minimum = 0, maximum = 10){
+	function clamp(number = 5, minimum = 0, maximum = 20){
 		 if(number < minimum){
 			 number = minimum;
 		 } else if(number > maximum){
