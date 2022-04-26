@@ -114,16 +114,16 @@ function start() {
 }
 function drawTank(){
 	c.fillStyle = "white";
-	c.fillRect (x, y, 32, 22);
+	c.fillRect (x, y, 64, 44);
 	c.beginPath();
 	c.fillStyle = "white";
-	c.fillRect(x+10, y-10, 12, 15);
+	c.fillRect(x+20, y-20, 24, 30);
 	c.beginPath();
-	c.arc(x+34,y+11,11,0,2*Math.PI)
+	c.arc(x+68,y+22,22,0,2*Math.PI)
 	c.fillStyle="white";
 	c.fill();
 	c.beginPath();
-	c.arc(x-1,y+11,11,0,2*Math.PI)
+	c.arc(x-2,y+22,22,0,2*Math.PI)
 	c.fillStyle="white";
 	c.fill();
 }
@@ -132,40 +132,40 @@ function drawAliens(){
 	for(I=0;I < alienCount[0]; I++){
 	xa = xalien[Num] + moveX;
 	if(time%2==0){
-		c.drawImage(alien1, 0, 0, alien1.width, alien1.height, xa, ya[Num], 30, 32);
+		c.drawImage(alien1, 0, 0, alien1.width, alien1.height, xa, ya[Num], 60, 64);
 	}
 	else{
-		c.drawImage(alien6, 0, 0, alien6.width, alien6.height, xa, ya[Num], 30, 32);
+		c.drawImage(alien6, 0, 0, alien6.width, alien6.height, xa, ya[Num], 60, 64);
 	}
 	Num++;
 	}
 	for(I=0;I < alienCount[1]; I++){
 	xa = xalien[Num] + moveX;
 	if(time%2==0){
-		c.drawImage(alien2, 0, 0, alien2.width, alien2.height, xa, ya[Num], 30, 32);
+		c.drawImage(alien2, 0, 0, alien2.width, alien2.height, xa, ya[Num], 60, 64);
 	}
 	else{
-		c.drawImage(alien5, 0, 0, alien5.width, alien5.height, xa, ya[Num], 30, 32);
+		c.drawImage(alien5, 0, 0, alien5.width, alien5.height, xa, ya[Num], 60, 64);
 	}
 	Num++;
 	}
 	for(I=0;I < alienCount[2]; I++){
 	xa = xalien[Num] + moveX;
 	if(time%2==0){
-		c.drawImage(alien7, 0, 0, alien7.width, alien7.height, xa, ya[Num], 30, 32);
+		c.drawImage(alien7, 0, 0, alien7.width, alien7.height, xa, ya[Num], 60, 64);
 	}
 	else{
-		c.drawImage(alien3, 0, 0, alien3.width, alien3.height, xa, ya[Num], 30, 32);
+		c.drawImage(alien3, 0, 0, alien3.width, alien3.height, xa, ya[Num], 60, 64);
 	}
 	Num++;
 	}
 	for(I=0;I < alienCount[3]; I++){
 	xa = xalien[Num] + moveX;
 	if(time%2==0){
-		c.drawImage(alien4, 0, 0, alien4.width, alien4.height, xa, ya[Num], 30, 32);
+		c.drawImage(alien4, 0, 0, alien4.width, alien4.height, xa, ya[Num], 60, 64);
 	}
 	else{
-		c.drawImage(alien8, 0, 0, alien8.width, alien8.height, xa, ya[Num], 30, 32);
+		c.drawImage(alien8, 0, 0, alien8.width, alien8.height, xa, ya[Num], 60, 64);
 	}
 	Num++;
 	}
@@ -350,8 +350,8 @@ function stoptank(){
 function shootem(){
 	if(shot == "false"){
 		audio.play();
-		xs = x + 14;
-		ys = y - 20;
+		xs = x + 28;
+		ys = y - 40;
 		shot = "true";  
 	}
 }
@@ -418,7 +418,7 @@ function setExplosion(number){
 	exCount = number;
 	for(a = 0; a < exCount; a++){
 	   	exX[a] = alienShotX[int];
-		exY[a] = y-10;
+		exY[a] = y-20;
 		exR[a] = (getRandom()+3)/20;
 		exA[a] = 1;
 		exColor1[a] = `${getColor()}`;
@@ -482,7 +482,7 @@ function explosion(){
 function drawBarrier(){
 	for(N = 0; N < barrierC; N++){
 		c.fillStyle = "red";
-		c.fillRect(barrierX[N] + addX * barrierN[N], barrierY[N] + y - 65, 5, 5);
+		c.fillRect(barrierX[N] + addX * barrierN[N], barrierY[N] + y - 65, 10, 10);
 		c.beginPath(); 
 	}
 }
