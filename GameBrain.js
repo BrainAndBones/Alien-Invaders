@@ -2,7 +2,7 @@ var c, x, y, ys = -10, xs = -10, addY, addX, leftA = 0, rightA, width, height,al
 	var alienLevel = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3];
 	var loopN = 0, moveX = 0, phaseA = 0, speed = 0, Alienspeed = .4, speedAdd = .2, shot = "false", shotx = [], shoty = [], time = 0, score = 0, topScores = [0,0,0,0,0], names = ["unused","unused","unused","unused","unused"], scoreNum;
 	setScores(); 
-	var lives = 3, j1centerX, j1centerY, j2centerX, j2centerY, j1radius = 50, j2radius = 25, controls = "joy", exCount, exX = [], exY = [], exAddX = [], exAddY = [], exR = [], exColor = [], exColor1 = [], exAngle, exA = [], exGravity = .0002, explode = false, audio;
+	var lives = 3, j1centerX, j1centerY, j2centerX, j2centerY, j1radius = 100, j2radius = 50, controls = "joy", exCount, exX = [], exY = [], exAddX = [], exAddY = [], exR = [], exColor = [], exColor1 = [], exAngle, exA = [], exGravity = .0002, explode = false, audio;
 	
 function initAudio(){
 		audio = new Audio("https://www.dropbox.com/s/4y70hfh1ir6j2l2/alienShotSound.m4a?raw=1");
@@ -49,12 +49,12 @@ function play(){
 	barrierY = [0,0,0,0,0,0,0,5,5,5,5,5,5,5,5,10,10,10,10,10,10,10,10,10,10,15,15,15,15,15,15,15,15,20,20,20,20,20,20,25,25,25,25,25,25,0,0,0,0,0,0,5,5,5,5,5,5,5,5,10,10,10,10,10,10,10,10,10,10,15,15,15,15,15,15,15,15,20,20,20,20,20,20,25,25,25,25,25,25,0,0,0,0,0,0,5,5,5,5,5,5,5,5,10,10,10,10,10,10,10,10,10,10,15,15,15,15,15,15,15,15,20,20,20,20,20,20,25,25,25,25,25,25,0,0,0,0,0,0,5,5,5,5,5,5,5,5,10,10,10,10,10,10,10,10,10,10,15,15,15,15,15,15,15,15,20,20,20,20,20,20,25,25,25,25,25,25];
 	shotx = [];
 	shoty = [];
-	Alienspeed = .4;
-	speedAdd = .2;
+	Alienspeed = .8;
+	speedAdd = .5;
 	moveX = 0;
 	alienTotal = 60;
-	x = width / 2 - 16;
-	y = height - 50; 
+	x = width / 2 - 32;
+	y = height - 100; 
 	addX = width/12;
 	leftA = 0;
 	rightA = addX * 2;
