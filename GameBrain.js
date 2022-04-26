@@ -59,9 +59,9 @@ function play(){
 	leftA = 0;
 	rightA = addX * 2;
 	j1centerX = width / 6;
-	j1centerY = height - 100;
+	j1centerY = height - 150;
 	j2centerX = width / 6;
-	j2centerY = height - 100;
+	j2centerY = height - 150;
 	explode = false;
 	var i = 0;
 	for(n=0;n<60;n++){
