@@ -133,9 +133,9 @@ body{
 	vertical-align: middle;
 	background-color: rgba(256, 240, 240, .2);
 	font-weight: bold;
-	font-size: 1em;
+	font-size: 3vh;
 	width: 14vw;
-	height: 14vw;
+	height: 14vh;
 	right: 3.5vw;
 	bottom: 4vh;
 	border-radius: 100%;
