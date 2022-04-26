@@ -54,7 +54,7 @@ function play(){
 	moveX = 0;
 	alienTotal = 60;
 	x = width / 2 - 32;
-	y = height - 200; 
+	y = height - 150; 
 	addX = width/12;
 	leftA = 0;
 	rightA = addX * 2;
@@ -73,11 +73,11 @@ function play(){
 		  i=0;
 	  }
 	}
-	let add4A = 10;
+	let add4A = 20;
 	for(n=1;n<=60;n++){
 	 	 ya[n-1] = add4A;
 	 	 if(n % 10 == 0){
-		  add4A+=40;
+		  add4A+=80;
 	 	 }
 	  }
 	 interval = setInterval(loop, 10);
@@ -488,7 +488,7 @@ function drawBarrier(){
 }
 function drawLifes(){
 	for(l = 60; l <= lives * 60; l+=60){
-		let xl = width-2;
+		let xl = width-20;
 		let yl = height-60;
 		c.fillStyle = "white";
 		c.fillRect (xl, yl, 32, 22);
@@ -750,10 +750,10 @@ function setMode(){
 
 // using the joystick knob position relative to the joystick body to move the player
 		if (j2centerX + 40 < j1centerX && x > 0) {
-			x--;
+			x-=2;
 		}
 		if (j2centerX - 40 > j1centerX && x < width - 80) {
-			x++;
+			x+=2;
 		}
 	}
 
