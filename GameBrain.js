@@ -488,7 +488,7 @@ function drawBarrier(){
 }
 function drawLifes(){
 	for(l = 60; l <= lives * 60; l+=60){
-		let xl = width-20;
+		let xl = width-60;
 		let yl = height-60;
 		c.fillStyle = "white";
 		c.fillRect (xl, yl, 32, 22);
