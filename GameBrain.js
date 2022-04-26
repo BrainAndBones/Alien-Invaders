@@ -143,6 +143,7 @@ function drawAliens(){
 	xa = xalien[Num] + moveX;
 	if(time%2==0){
 		c.drawImage(alien2, 0, 0, alien2.width, alien2.height, xa, ya[Num], 60, 64);
+	}
 	else{
 		c.drawImage(alien5, 0, 0, alien5.width, alien5.height, xa, ya[Num], 60, 64);
 	}
