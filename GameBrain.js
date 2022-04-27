@@ -4,7 +4,7 @@ var c, x, y, ys = -20, xs = -20, addY, addX, leftA = 0, rightA, width, height,al
 	setScores(); 
 	var lives = 3, j1centerX, j1centerY, j2centerX, j2centerY, j1radius = 100, j2radius = 50, controls = "joy", exCount, exX = [], exY = [], exAddX = [], exAddY = [], exR = [], exColor = [], exColor1 = [], exAngle, exA = [], exGravity = .0002, explode = false, audio;
 	
-initAudio();
+
 	var isTouchingJoystick = false, barrierC, barrierN, barrierX = [], barrierY = [];
 	var str1;
 	var str2 = "Start Instructions Settings";
@@ -482,7 +482,7 @@ function drawBarrier(){
 	}
 }
 function drawLifes(){
-	for(l = 60; l <= lives * 60; l+=60){
+	for(l = 60; l <= lives * 30; l+=30){
 		let xl = width-160;
 		let yl = height-60;
 		c.fillStyle = "white";
