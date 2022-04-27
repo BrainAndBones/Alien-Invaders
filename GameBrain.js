@@ -344,7 +344,6 @@ function stoptank(){
 }
 function shootem(){
 	if(shot == "false"){
-		audio.play();
 		xs = x + 28;
 		ys = y - 40;
 		shot = "true";  
@@ -482,8 +481,8 @@ function drawBarrier(){
 	}
 }
 function drawLifes(){
-	for(l = 60; l <= lives * 30; l+=30){
-		let xl = width-160;
+	for(l = 30; l <= lives * 30; l+=30){
+		let xl = width-200;
 		let yl = height-60;
 		c.fillStyle = "white";
 		c.fillRect (xl, yl, 32, 22);
