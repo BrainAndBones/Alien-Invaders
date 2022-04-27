@@ -784,7 +784,7 @@ function setMode(){
 		// resetJoy - reset joystick; called when the screen is no longer being held
 		isTouchingJoystick = false;
 		j2centerX = width / 6;
-		j2centerY = height - 100;
+		j2centerY = height - 50;
 	}
 
 	function clamp(number = 5, minimum = 0, maximum = 20){
