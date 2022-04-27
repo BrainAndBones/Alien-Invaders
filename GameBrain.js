@@ -4,11 +4,6 @@ var c, x, y, ys = -20, xs = -20, addY, addX, leftA = 0, rightA, width, height,al
 	setScores(); 
 	var lives = 3, j1centerX, j1centerY, j2centerX, j2centerY, j1radius = 100, j2radius = 50, controls = "joy", exCount, exX = [], exY = [], exAddX = [], exAddY = [], exR = [], exColor = [], exColor1 = [], exAngle, exA = [], exGravity = .0002, explode = false, audio;
 	
-function initAudio(){
-		audio = new Audio("https://www.dropbox.com/s/4y70hfh1ir6j2l2/alienShotSound.m4a?raw=1");
-		audio.load();
-		audio.loop = false;
-}
 initAudio();
 	var isTouchingJoystick = false, barrierC, barrierN, barrierX = [], barrierY = [];
 	var str1;
@@ -488,7 +483,7 @@ function drawBarrier(){
 }
 function drawLifes(){
 	for(l = 60; l <= lives * 60; l+=60){
-		let xl = width-60;
+		let xl = width-160;
 		let yl = height-60;
 		c.fillStyle = "white";
 		c.fillRect (xl, yl, 32, 22);
