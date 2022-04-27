@@ -8,8 +8,13 @@ body{
 	-ms-user-select: none;
 	-webkit-tap-highlight-color: transparent;
 	margin: 0;
-	height:95vh;
-	width: 99vw;
+	height:90vh;
+	width: 95vw;
+	left: 0;
+	right:0;
+	top:0;
+	bottom:0; 
+	margin: auto;
 }
 #canvas{
 	margin: 0; 
